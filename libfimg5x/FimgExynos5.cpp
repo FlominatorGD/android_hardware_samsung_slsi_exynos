@@ -27,6 +27,8 @@
 
 #include "FimgExynos5.h"
 
+#pragma clang diagnostic ignored "-Wunreachable-code-loop-increment"
+
 extern pthread_mutex_t s_g2d_lock;
 
 namespace android
@@ -57,7 +59,7 @@ FimgApi *FimgV4x::CreateInstance()
 {
     FimgApi *ptrFimg = NULL;
 
-    for(int i = m_curFimgV4xIndex; i < NUMBER_FIMG_LIST; /*i++*/) {
+    for(int i = m_curFimgV4xIndex; i < NUMBER_FIMG_LIST; i++) {
         if (m_ptrFimgApiList[i] == NULL)
             m_ptrFimgApiList[i] = new FimgV4x;
 
