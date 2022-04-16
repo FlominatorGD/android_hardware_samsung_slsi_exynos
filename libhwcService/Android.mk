@@ -80,6 +80,8 @@ LOCAL_C_INCLUDES += \
 endif
 endif
 
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+
 LOCAL_SRC_FILES := ExynosHWCService.cpp IExynosHWC.cpp
 
 LOCAL_MODULE := libExynosHWCService
