@@ -45,8 +45,9 @@ LOCAL_SRC_FILES := \
 
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhdmimodule/Android.mk
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
 LOCAL_MODULE := libhdmi
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
-

@@ -17,10 +17,15 @@ include $(CLEAR_VARS)
 
 LOCAL_CFLAGS += -DLOG_TAG=\"exynos-libhwjpeg\"
 
-LOCAL_SHARED_LIBRARIES := liblog libutils libcutils libcsc libion
+LOCAL_SHARED_LIBRARIES := liblog libutils libcutils libcsc libion libui
 
 LOCAL_C_INCLUDES := $(TOP)/hardware/samsung_slsi/exynos/include \
                     $(TOP)/system/core/libion/include
+
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
 
 LOCAL_SRC_FILES := hwjpeg-base.cpp hwjpeg-v4l2.cpp libhwjpeg-exynos.cpp
 ifeq ($(TARGET_USES_UNIVERSAL_LIBHWJPEG), true)
@@ -29,6 +34,7 @@ endif
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := libhwjpeg
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

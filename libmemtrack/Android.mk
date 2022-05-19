@@ -18,9 +18,15 @@ LOCAL_PATH := $(call my-dir)
 # hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(CLEAR_VARS)
 
+LOCAL_C_INCLUDES += system/core/libcutils/include
+LOCAL_C_INCLUDES := \
+      system/core/include \
+      system/core/libcutils/include
+
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_SRC_FILES := memtrack_exynos.c mali.c ion.c
 LOCAL_MODULE := memtrack.$(TARGET_BOARD_PLATFORM)
+LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)

@@ -35,6 +35,7 @@ LOCAL_SHARED_LIBRARIES :=    \
         liblog
 
 LOCAL_MODULE := libstagefrighthw
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)

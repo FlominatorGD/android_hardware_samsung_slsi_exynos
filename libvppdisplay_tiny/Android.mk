@@ -28,7 +28,11 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcmodule
 
+#
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
 
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
 
 
 LOCAL_SRC_FILES := \
@@ -38,7 +42,7 @@ LOCAL_SRC_FILES := \
 
 
 LOCAL_MODULE := libdisplay
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
-

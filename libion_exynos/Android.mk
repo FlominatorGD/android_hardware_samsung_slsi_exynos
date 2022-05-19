@@ -17,10 +17,15 @@ include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
 
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
+
 LOCAL_SRC_FILES:= \
 	libion.cpp
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers
 LOCAL_MODULE := libion_exynos
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 

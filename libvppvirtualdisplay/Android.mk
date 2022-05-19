@@ -40,6 +40,8 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/libmpp \
 	$(TOP)/system/core/libsync/include
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
@@ -49,7 +51,7 @@ LOCAL_SRC_FILES := \
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libvirtualdisplaymodule/Android.mk
 
 LOCAL_MODULE := libvirtualdisplay
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
-

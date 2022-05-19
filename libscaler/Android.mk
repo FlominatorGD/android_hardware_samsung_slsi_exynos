@@ -23,6 +23,11 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/../include \
 	$(TOP)/hardware/samsung_slsi/exynos/include \
 	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils
+#
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
@@ -40,6 +45,7 @@ LOCAL_CFLAGS += -DSCALER_USE_PREMUL_FMT
 endif
 
 LOCAL_MODULE := libexynosscaler
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

@@ -32,6 +32,13 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule \
 	$(TOP)/hardware/samsung_slsi/exynos/libmpp
 
+#
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include \
+										frameworks/native/opengl/include
+
 ifeq ($(BOARD_USES_VPP), true)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libdisplaymodule
@@ -48,7 +55,7 @@ LOCAL_SRC_FILES := \
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhdmimodule/Android.mk
 
 LOCAL_MODULE := libhdmi
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
-

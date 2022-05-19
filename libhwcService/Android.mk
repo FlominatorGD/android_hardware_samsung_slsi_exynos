@@ -25,6 +25,8 @@ LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware_legacy libutils libbinder
 			  libexynosv4l2 libhdmi libhwcutils libsync
 LOCAL_CFLAGS += -DLOG_TAG=\"HWCService\"
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers libandroid_headers generated_kernel_headers
+
 LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/hardware/samsung_slsi/exynos/include \
@@ -32,7 +34,13 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcmodule \
-	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libdisplaymodule
+	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libdisplaymodule \
+
+#
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include \
+										frameworks/native/opengl/include \
+										frameworks/native/include
 
 ifeq ($(BOARD_USES_VPP), true)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay \
@@ -80,11 +88,10 @@ LOCAL_C_INCLUDES += \
 endif
 endif
 
-LOCAL_HEADER_LIBRARIES += generated_kernel_headers
-
 LOCAL_SRC_FILES := ExynosHWCService.cpp IExynosHWC.cpp
 
 LOCAL_MODULE := libExynosHWCService
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk

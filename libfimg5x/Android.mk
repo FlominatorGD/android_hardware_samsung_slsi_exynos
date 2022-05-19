@@ -29,12 +29,20 @@ LOCAL_C_INCLUDES += \
 	hardware/samsung_slsi/$(TARGET_SOC)/include \
 	hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include
 
+#
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include \
+										system/core/liblog/include \
+										frameworks/native/include
+
 LOCAL_ADDITIONAL_DEPENDENCIES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SHARED_LIBRARIES:= liblog libutils libbinder
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers libandroid_headers generated_kernel_headers liblog_ndk_headers liblog_headers
 
 LOCAL_MODULE:= libfimg
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_PRELINK_MODULE := false
 

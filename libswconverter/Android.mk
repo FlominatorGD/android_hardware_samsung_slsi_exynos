@@ -37,6 +37,7 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/include
 
 LOCAL_MODULE := libswconverter
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_PRELINK_MODULE := false
 

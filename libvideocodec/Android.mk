@@ -13,6 +13,12 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/system/core/libion/include
 
+#
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers
+
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
+
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
@@ -76,6 +82,7 @@ endif
 LOCAL_SHARED_LIBRARIES = libion
 
 LOCAL_MODULE := libExynosVideoApi
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm

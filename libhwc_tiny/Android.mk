@@ -32,15 +32,23 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcmodule \
 	$(LOCAL_PATH)/../include \
-	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils
+	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils \
+	frameworks/native/include
 
+#
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include \
+										frameworks/native/opengl/include \
+										frameworks/native/include
 
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay_tiny
 LOCAL_SRC_FILES := ExynosHWC.cpp
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers libhardware_legacy_headers libandroid_headers
+
 LOCAL_MODULE := hwcomposer.exynos5
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
-

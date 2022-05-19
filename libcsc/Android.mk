@@ -13,6 +13,9 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/../include \
 	$(LOCAL_PATH)/../libexynosutils
 
+LOCAL_C_INCLUDES += system/core/include \
+                    system/core/libcutils/include
+
 LOCAL_ADDITIONAL_DEPENDENCIES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
@@ -20,7 +23,9 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
 
 LOCAL_CFLAGS :=
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers libcutils_headers
 LOCAL_MODULE := libcsc
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_PRELINK_MODULE := false
 
