@@ -30,10 +30,10 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SHARED_LIBRARIES := liblog libion libcutils libEGL libGLESv1_CM libhardware \
 	libhardware_legacy libutils libsync \
-LOCAL_HEADER_LIBRARIES := libcutils_headers
-LOCAL_HEADER_LIBRARIES := libhardware_headers
 	libexynosv4l2 libexynosutils libhwcutils libexynosdisplay libhdmi \
 	libmpp
+
+LOCAL_HEADER_LIBRARIES := libcutils_headers libhardware_headers
 #libMcClient
 
 ifeq ($(BOARD_USES_FIMC), true)
