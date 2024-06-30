@@ -14,7 +14,6 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/system/core/libion/include
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
-LOCAL_HEADER_LIBRARIES += generated_kernel_headers
 
 ifeq ($(BOARD_USE_KHRONOS_OMX_HEADER), true)
 LOCAL_C_INCLUDES += $(TOP)/hardware/samsung_slsi/openmax/include/khronos
