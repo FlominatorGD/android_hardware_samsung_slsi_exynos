@@ -39,6 +39,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay_tiny
 LOCAL_SRC_FILES := ExynosHWC.cpp
 
 LOCAL_MODULE := hwcomposer.exynos5
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk

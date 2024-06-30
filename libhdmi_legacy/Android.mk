@@ -55,6 +55,7 @@ endif
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhdmimodule/Android.mk
 
 LOCAL_MODULE := libhdmi
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

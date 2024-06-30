@@ -40,6 +40,7 @@ LOCAL_CFLAGS += -DSCALER_USE_PREMUL_FMT
 endif
 
 LOCAL_MODULE := libexynosscaler
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

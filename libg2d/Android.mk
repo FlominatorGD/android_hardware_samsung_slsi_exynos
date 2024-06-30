@@ -30,6 +30,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := \
 LOCAL_SRC_FILES := exynos_blender.cpp exynos_blender_obj.cpp libg2d.cpp
 
 LOCAL_MODULE := libexynosg2d
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

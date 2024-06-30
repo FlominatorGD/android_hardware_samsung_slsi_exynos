@@ -20,6 +20,7 @@ ifneq ($(BOARD_DISABLE_HWC_DEBUG),true)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := ExynosHWCDebug.c
 LOCAL_MODULE := hwcdebug
+LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_EXECUTABLE)
 endif
 
@@ -120,6 +121,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES := \
 LOCAL_SRC_FILES := ExynosHWC.cpp
 
 LOCAL_MODULE := hwcomposer.$(TARGET_BOARD_PLATFORM)
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk

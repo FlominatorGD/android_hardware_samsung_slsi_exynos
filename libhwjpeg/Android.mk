@@ -29,6 +29,7 @@ endif
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := libhwjpeg
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

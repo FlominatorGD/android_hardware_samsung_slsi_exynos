@@ -8,6 +8,7 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include
 
 LOCAL_MODULE := libsrpapi
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_MODULE_TAGS := optional
 
