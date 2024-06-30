@@ -19,6 +19,7 @@ LOCAL_PRELINK_MODULE := false
 
 LOCAL_SHARED_LIBRARIES := liblog libutils libcutils libexynosutils libexynosv4l2 \
                           libhwcutils libexynosdisplay libmpp libsync
+LOCAL_HEADER_LIBRARIES := libcutils_headers
 
 LOCAL_CFLAGS += -DLOG_TAG=\"virtual\"
 LOCAL_CFLAGS += -DHLOG_CODE=3

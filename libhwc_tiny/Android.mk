@@ -22,6 +22,8 @@ LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils libEGL libGLESv1_CM libhardware \
 	libhardware_legacy libutils libsync \
+LOCAL_HEADER_LIBRARIES := libcutils_headers
+LOCAL_HEADER_LIBRARIES := libhardware_headers
 	libexynosv4l2 libexynosutils libexynosdisplay
 
 LOCAL_CFLAGS += -DLOG_TAG=\"hwcomposer\"

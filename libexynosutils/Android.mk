@@ -17,6 +17,7 @@ include $(CLEAR_VARS)
 
 LOCAL_PRELINK_MODULE := false
 LOCAL_SHARED_LIBRARIES := liblog libutils libcutils
+LOCAL_HEADER_LIBRARIES := libcutils_headers
 
 LOCAL_CFLAGS += -DEXYNOS_PLATFORM_ON_ANDROID
 

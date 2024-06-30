@@ -21,6 +21,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_C_INCLUDES += hardware/libhardware/include
 LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_SRC_FILES := memtrack_exynos.c mali.c ion.c
 LOCAL_MODULE := memtrack.$(TARGET_BOARD_PLATFORM)
 LOCAL_PROPRIETARY_MODULE := true

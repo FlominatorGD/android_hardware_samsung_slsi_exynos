@@ -23,6 +23,8 @@ include $(CLEAR_VARS)
 LOCAL_PRELINK_MODULE := false
 LOCAL_SHARED_LIBRARIES := liblog libcutils libhardware_legacy libutils libbinder \
 			  libexynosv4l2 libhdmi libhwcutils libsync
+LOCAL_HEADER_LIBRARIES := libcutils_headers
+LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_CFLAGS += -DLOG_TAG=\"HWCService\"
 
 LOCAL_C_INCLUDES := \

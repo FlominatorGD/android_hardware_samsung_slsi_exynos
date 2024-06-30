@@ -10,6 +10,7 @@ endif
 LOCAL_SRC_FILES := \
 		exyrngd.c
 LOCAL_SHARED_LIBRARIES := libc libcutils
+LOCAL_HEADER_LIBRARIES := libcutils_headers
 #LOCAL_CFLAGS := -DANDROID_CHANGES
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_EXECUTABLE)

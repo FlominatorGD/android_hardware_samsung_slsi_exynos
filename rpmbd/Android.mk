@@ -24,6 +24,7 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SRC_FILES := \
 		rpmbd.c
 LOCAL_SHARED_LIBRARIES := libc libcutils
+LOCAL_HEADER_LIBRARIES := libcutils_headers
 LOCAL_MODULE_TAGS := optional
 ifeq ($(BOARD_USES_MMC_RPMB), true)
 LOCAL_CFLAGS := -DUSE_MMC_RPMB

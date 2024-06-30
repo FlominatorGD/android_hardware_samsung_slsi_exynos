@@ -18,6 +18,7 @@ include $(CLEAR_VARS)
 LOCAL_CFLAGS += -DLOG_TAG=\"exynos-libhwjpeg\"
 
 LOCAL_SHARED_LIBRARIES := liblog libutils libcutils libcsc libion
+LOCAL_HEADER_LIBRARIES := libcutils_headers
 
 LOCAL_C_INCLUDES := $(TOP)/hardware/samsung_slsi/exynos/include \
                     $(TOP)/system/core/libion/include
