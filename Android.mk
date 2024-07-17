@@ -17,29 +17,18 @@
 ifeq ($(TARGET_SLSI_VARIANT),bsp)
 
 common_exynos_dirs := \
-	libion_exynos \
 	libexynosutils \
 	libcec \
 	libcsc \
-	libmpp \
-	libhwcutils \
-	libhwcService \
 	libv4l2 \
-	libscaler \
 	libswconverter \
 	libvideocodec \
 	libstagefrighthw \
-	libmemtrack \
         exyrngd \
 	rpmbd
 
 ifeq ($(TARGET_USES_UNIVERSAL_LIBHWJPEG), true)
 common_exynos_dirs += libhwjpeg
-endif
-
-ifneq ($(BOARD_USES_FIMC), true)
-common_exynos_dirs += \
-    libgscaler
 endif
 
 ifeq ($(BOARD_USES_FIMGAPI_V5X), true)
@@ -56,39 +45,6 @@ common_exynos_dirs += \
     gralloc
 endif
 
-ifeq ($(BOARD_USES_HWC_TINY), true)
-common_exynos_dirs += \
-	libvppdisplay_tiny
-else
-ifeq ($(BOARD_USES_VPP), true)
-common_exynos_dirs += libvppdisplay
-else
-common_exynos_dirs += libdisplay
-endif
-endif
-
-ifeq ($(BOARD_USES_HWC_TINY), true)
-common_exynos_dirs += \
-	libhwc_tiny
-else
-ifneq ($(BOARD_TV_PRIMARY), true)
-common_exynos_dirs += \
-	libhwc
-endif
-endif
-
-ifneq ($(BOARD_USES_HWC_TINY), true)
-ifeq ($(BOARD_USES_VIRTUAL_DISPLAY), true)
-ifeq ($(BOARD_USES_VPP), true)
-common_exynos_dirs += \
-	libvppvirtualdisplay
-else
-common_exynos_dirs += \
-	libvirtualdisplay
-endif
-endif
-endif
-
 ifeq ($(BOARD_USE_ALP_AUDIO), true)
 ifeq ($(BOARD_USE_SEIREN_AUDIO), true)
 common_exynos_dirs += \
@@ -102,22 +58,6 @@ endif
 ifeq ($(BOARD_USE_COMMON_AUDIOHAL), true)
 common_exynos_dirs += \
 	libaudio
-endif
-
-ifneq ($(BOARD_USES_HWC_TINY), true)
-ifeq ($(BOARD_HDMI_INCAPABLE), true)
-common_exynos_dirs += libhdmi_dummy
-else
-ifeq ($(BOARD_USES_VPP), true)
-common_exynos_dirs += libvpphdmi
-else
-ifeq ($(BOARD_USES_NEW_HDMI), true)
-common_exynos_dirs += libhdmi
-else
-common_exynos_dirs += libhdmi_legacy
-endif
-endif
-endif
 endif
 
 ifeq ($(BOARD_USES_FIMGAPI_V4L2), true)
